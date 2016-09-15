@@ -1,6 +1,7 @@
 language: cpp
 compiler:
     - gcc
+    - clang
 
 addons:
     apt:
@@ -10,4 +11,8 @@ addons:
         - cmake
         - cmake-data
 
-script: $CXX --version && cmake . && make
+script:
+    - $CXX --version 
+    - mkdir build 
+    - cd build
+    - cmake .. && make
